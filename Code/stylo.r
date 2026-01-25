@@ -3,7 +3,7 @@
 library(stylo)
 
 # Set working directory. For non-lemmatized texts, change folder here to "...Corpus_combined".
-setwd("C:/Users/kstevens/Desktop/Privat/Uni/Master/3Semester/Data Science/Masterarbeit/Data/Corpus_lemmatized")
+setwd("Placeholder for working directory")
 
 # Start Stylo analysis
 stylo(
