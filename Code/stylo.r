@@ -3,7 +3,7 @@
 library(stylo)
 
 # Set working directory. For non-lemmatized texts, change folder here to "...Corpus_combined".
-setwd("Placeholder for working directory")
+setwd("C:/Users/Data/Corpus_lemmatized")
 
 # Start Stylo analysis
 stylo(
@@ -17,3 +17,4 @@ stylo(
   sampling = "no.sampling",   # No sampling, use entire texts
   write.png.file = TRUE       # Save result as PNG
 )
+
