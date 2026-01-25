@@ -12,8 +12,8 @@ import torch
 from torchmetrics.functional import pairwise_cosine_similarity as cosine_similarity
 
 
-# Load the model locally
-model = torch.load("models/all_mpnet_base_v2.pt", weights_only=False, map_location=torch.device('cpu'))
+# Load the model
+model = SentenceTransformer("jinaai/jina-embeddings-v2-base-de", trust_remote_code=True)
 
 # Load aLL combined files for each party
 base_dir = "data"
