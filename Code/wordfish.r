@@ -5,7 +5,7 @@ library(quanteda.textmodels)
 library(quanteda.textplots)
 
 # Select the corpus: Folder with all lemmatized files
-input_dir <- "C:/Users/kstevens/Desktop/Privat/Uni/Master/3Semester/Data Science/Masterarbeit/Data/Corpus_lemmatized"
+input_dir <- "C:/Users/Data/Corpus_lemmatized"
 
 # List of all .txt files
 files <- list.files(input_dir, pattern = "\\.txt$", full.names = TRUE)
@@ -68,3 +68,4 @@ cat("\nClusterplot gespeichert als:", output_png, "\n")
 
 # Plot of the Wordfish scale
 textplot_scale1d(tmod_wf, margin = "documents")
+
