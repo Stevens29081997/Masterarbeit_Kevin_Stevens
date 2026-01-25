@@ -1,6 +1,6 @@
 
 # Set working directory
-base_dir <- "C:/Users/kstevens/Desktop/Privat/Uni/Master/3Semester/Data Science/Masterarbeit/Data"
+base_dir <- "Placeholder for working directory"
 
 # Folders to exclude:
 exclude_folders <- c("Corpus_lemmatized", "raw_programme")
@@ -48,3 +48,4 @@ for (party_folder in party_folders) {
 ")
   }
 }
+
