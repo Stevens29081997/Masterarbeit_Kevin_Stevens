@@ -20,8 +20,6 @@ for partei in os.listdir("data/"):
     if os.path.exists(lemm_file):
         with open(lemm_file, "r", encoding="utf-8") as f:
             corpus[partei] = f.read()
-    else:
-        print(f"Warnung: Lemmatisierte Datei fehlt für Partei '{partei}' → {lemm_file}")
 
 print("Parteien im Korpus:", corpus.keys())
 
@@ -69,7 +67,7 @@ for partei, partei_tf in tfs.items():
 
 # Output: Top 10 words with highest TF–IDF per party
 for partei, partei_tfidf in tfidfs.items():
-    print(f"\n=== Top-10 TF-IDF Wörter für {partei} ===")
+    print(f"\nTop-10 TF-IDF Wörter für {partei}:")
 
     # Sorting out filter errors in the results
     # Comment this section out to see the original, unfiltered result list
