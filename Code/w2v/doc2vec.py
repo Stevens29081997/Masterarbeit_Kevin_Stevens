@@ -76,6 +76,6 @@ for p1 in parties:
 
 similarities_sorted = sorted(similarities, key=lambda x: x[2], reverse=True)
 
-print("\nTop-Ähnlichkeiten zwischen Parteien (absteigend):\n")
+print("\nTop-Ähnlichkeiten zwischen den Parteien (absteigend):\n")
 for p1, p2, value in similarities_sorted:
     print(f"{p1} – {p2}: {value:.4f}")
