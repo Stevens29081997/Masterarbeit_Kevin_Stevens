@@ -15,7 +15,7 @@ from torchmetrics.functional import pairwise_cosine_similarity as cosine_similar
 # Load the model
 model = SentenceTransformer("jinaai/jina-embeddings-v2-base-de", trust_remote_code=True)
 
-# Load aLL combined files for each party
+# Load all combined files for each party
 base_dir = "data"
 ignore_folder = "raw_programme"
 
@@ -80,16 +80,4 @@ for ex, ey in embeddings_pca.T:
 plt.legend(labels=list(corpus.keys()))
 plt.grid()
 plt.title("PCA aller Partei-Embeddings in 2D", pad=20, fontweight='bold')
-plt.savefig("PCA_all_embeddings.png")
-
-labels = list(corpus.keys())
-labels.remove('GOP')
-labels.remove('DEM')
-plt.cla()
-for i, (ex, ey) in enumerate(embeddings_pca.T):
-    if i not in [2,4]:
-        plt.scatter(ex, ey)
-plt.legend(labels=labels)
-plt.grid()
-plt.title("PCA der deutschen Partei-Embeddings in 2D", pad=20, fontweight='bold')
-plt.savefig("PCA_de_embeddings.png")
+plt.savefig("PCA_embeddings.png")
