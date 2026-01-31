@@ -33,7 +33,7 @@ for partei in os.listdir(base_dir):
 
     combined_path = join(partei_path, "Combined")
     if not os.path.exists(combined_path):
-        print(f"Warnung: Kein Combined-Ordner für {partei}")
+        print(f"Kein Combined-Ordner für {partei}")
         continue
 
     full_text = ""
@@ -45,7 +45,7 @@ for partei in os.listdir(base_dir):
                 full_text += f.read().replace("\n", " ").strip()
 
     if full_text.strip() == "":
-        print(f"Warnung: Keine Texte für {partei} gefunden!")
+        print(f"Keine Texte für {partei} gefunden!")
         continue
 
     corpus[partei] = full_text.strip()
