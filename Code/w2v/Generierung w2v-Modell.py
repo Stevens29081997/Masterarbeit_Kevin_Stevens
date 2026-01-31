@@ -22,8 +22,6 @@ for partei in os.listdir("data/"):
     if os.path.exists(lemm_file):
         with open(lemm_file, "r", encoding="utf-8") as f:
             corpus[partei] = f.read()
-    else:
-        print(f"Warnung: Lemmatisierte Datei fehlt für Partei '{partei}' → {lemm_file}")
 
 print("Parteien im Korpus:", corpus.keys())
 
@@ -54,3 +52,4 @@ from gensim.models import Word2Vec
 
 model = Word2Vec.load("word2vec_parteien.model")
 model.wv.save_word2vec_format("word2vec_parteien.txt", binary=False)
+
