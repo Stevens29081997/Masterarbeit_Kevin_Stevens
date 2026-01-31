@@ -33,7 +33,7 @@ for partei in os.listdir(base_dir):
 
     combined_path = join(partei_path, "Combined")
     if not os.path.exists(combined_path):
-        print(f"⚠ Warnung: Kein Combined-Ordner für {partei}")
+        print(f"Warnung: Kein Combined-Ordner für {partei}")
         continue
 
     full_text = ""
@@ -45,20 +45,20 @@ for partei in os.listdir(base_dir):
                 full_text += f.read().replace("\n", " ").strip()
 
     if full_text.strip() == "":
-        print(f"⚠ Warnung: Keine Texte für {partei} gefunden!")
+        print(f"Warnung: Keine Texte für {partei} gefunden!")
         continue
 
     corpus[partei] = full_text.strip()
-    print(f"✔ Loaded Combined text for {partei}")
+    print(f"Loaded Combined text for {partei}")
 
 print("\nParteien im Korpus:", list(corpus.keys()))
 
 # Embed each party's full combined text
 documents = list(corpus.values())
 
-print("\n🔄 Generating embeddings...")
+print("\nGenerating embeddings...")
 embeddings = model.encode(documents, convert_to_tensor=True)
-print("✔ Embeddings shape:", embeddings.shape)
+print("Embeddings shape:", embeddings.shape)
 
 sim = cosine_similarity(embeddings) # embeddings.shape = (N,d), sim.shape = (N,N)
 sim += torch.eye(sim.shape[0])
